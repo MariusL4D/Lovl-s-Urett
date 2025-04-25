@@ -1,0 +1,12 @@
+# Sensitive data
+.env
+.env.local
+*.env
+
+# Node-moduler og loggfiler
+node_modules/
+npm-debug.log*
+
+# Databasefiler (hvis aktuelle)
+*.sqlite
+*.db

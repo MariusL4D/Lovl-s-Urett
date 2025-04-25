@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Takk for din henvendelse</title>
+  <style>
+    .thank-you-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <% if (user) { %>
+    <div class="thank-you-container">
+      <h1>Takk for din henvendelse, <%= user.email %>!</h1>
+      <p>Vi har mottatt ditt spørsmål og vil svare så fort vi kan.</p>
+      <p>Din henvendelse er viktig for oss.</p>
+      <a href="/">Tilbake til hovedsiden</a>
+    </div>
+  <% } else { %>
+    <script>window.location.href = '/login';</script>
+  <% } %>
+</body>
+</html>
