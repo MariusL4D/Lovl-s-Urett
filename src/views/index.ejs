@@ -91,7 +91,7 @@
   <% } %>
 
   <script>
-    // Legger til en ekstra bekreftelse før kontosletting
+    
     document.querySelector('form[action="/delete-account"]')?.addEventListener('submit', function(e) {
       if (!confirm('Dette vil slette ALLE dine data permanent. Er du helt sikker?')) {
         e.preventDefault();

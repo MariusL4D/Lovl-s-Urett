@@ -3,16 +3,16 @@ import { AuthService, UserService, AdminService } from '../services/services.js'
 
 const router = express.Router();
 
-// GET-ruter (nye)
+
 router.get('/login', (req, res) => {
     res.render('login', { error: null });
   });
 
 router.get('/register', (req, res) => {
-    res.render('register', { error: null }); // Send med error som null som standard
+    res.render('register', { error: null }); 
   });
 
-// POST-ruter (eksisterende)
+
 router.post('/register', async (req, res) => {
     try {
       await AuthService.registerUser(
@@ -84,8 +84,8 @@ router.get('/logout', (req, res) => {
         console.error('Feil under utlogging:', err);
         return res.redirect('/?error=Kunne+ikke+logge+ut');
       }
-      res.clearCookie('connect.sid'); // Fjerner session cookie
-      res.redirect('/?message=Du+er+nå+utlogget'); // Redirect til hovedsiden med bekreftelse
+      res.clearCookie('connect.sid'); 
+      res.redirect('/?message=Du+er+nå+utlogget'); 
     });
   });
 
@@ -105,7 +105,7 @@ router.get('/logout', (req, res) => {
     }
   });
   
-  // Slett bruker (admin)
+ 
   router.post('/admin/delete-user', async (req, res) => {
     if (!req.session.user?.is_admin) {
       return res.status(403).send('Ingen tilgang');
